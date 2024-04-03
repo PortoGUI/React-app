@@ -1,10 +1,12 @@
 import React from "react";
 import './comentario.css'
 
-const Comentario = () => (
+const Comentario = props => (
         <div className="comentario">
-            <div>Hello World</div>
-            <div>How are you?</div>
+            <h2><b>{props.name}</b></h2>
+            <p>{props.email}</p>
+            <p>{props.children}</p>
+            <p>{String(props.date)}</p>
         </div>
 )
 
