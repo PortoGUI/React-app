@@ -28,22 +28,18 @@ class App extends Component {
 
     addComment = event => {
         event.preventDefault()
-        // const newComment = {
-        //     nome: 'Brian',
-        //     email: 'Brian@email.com',
-        //     data: String(new Date()),
-        //     texto: 'this is a inserted message'
-        // }
-
-        /*let lista = this.state.comentarios
-        lista.push(newComment)
-        this.setState({comentarios: lista})*/
-
         const newComment = {...this.state.novoComentario, data: String(new Date())}
         this.setState({
             comentarios: [...this.state.comentarios, newComment],
             novoComentario: {nome: '', email: '', texto: ''}
         })
+    }
+
+    removeComment = event => {
+        let lista = this.state.comentarios;
+        lista = lista.filter(c=> c !== event)
+
+        this.setState({comentarios: lista})
     }
 
     changeByName = event => {
@@ -56,7 +52,7 @@ class App extends Component {
                     <h1>React Project</h1>
                     {this.state.comentarios.map((comentario, i) => (
                             <Comentario key={i} name={comentario.nome} email={comentario.email}
-                                        date={comentario.data}>
+                                        date={comentario.data} onRemove={this.removeComment.bind(this, comentario)}>
                                 {comentario.texto}
                             </Comentario>
                     ))}
