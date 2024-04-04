@@ -7,8 +7,8 @@ class App extends Component {
     state = {
         comentarios: [
             {
-                nome: 'Jhon',
-                email: 'Jhon@email.com',
+                nome: 'Jannet',
+                email: 'Jannet@email.com',
                 data: String(new Date()),
                 texto: 'this is a default message'
             },
@@ -37,7 +37,7 @@ class App extends Component {
 
     removeComment = event => {
         let lista = this.state.comentarios;
-        lista = lista.filter(c=> c !== event)
+        lista = lista.filter(c => c !== event)
 
         this.setState({comentarios: lista})
     }
@@ -49,31 +49,29 @@ class App extends Component {
     render() {
         return (
                 <div className="App">
-                    <h1>React Project</h1>
+                    <h1>Comments</h1>
                     {this.state.comentarios.map((comentario, i) => (
                             <Comentario key={i} name={comentario.nome} email={comentario.email}
                                         date={comentario.data} onRemove={this.removeComment.bind(this, comentario)}>
                                 {comentario.texto}
                             </Comentario>
                     ))}
-
-                    <form method="post" onSubmit={this.addComment}>
-                        <h2>Adicionar Comentario</h2>
+                    <form method="post" onSubmit={this.addComment} className="novo-comentario">
+                        <h2>Add Comment</h2>
                         <div>
                             <input value={this.state.novoComentario.nome} onChange={this.changeByName} type="text"
-                                   name="nome" placeholder="Digite um nome"/>
+                                   name="nome" placeholder="Name" required/>
                         </div>
                         <div>
                             <input value={this.state.novoComentario.email} onChange={this.changeByName} type="email"
-                                   name="email" placeholder="digite um e-mail"/>
+                                   name="email" placeholder="e_mail@example.com" required/>
                         </div>
                         <div>
                             <textarea value={this.state.novoComentario.texto} onChange={this.changeByName}
-                                      name="texto" rows="4"/>
+                                      placeholder="Type here..." name="texto" rows="4" required/>
                         </div>
-                        <button>Adicionar</button>
+                        <button>Add</button>
                     </form>
-
                 </div>
         );
     }

@@ -1,6 +1,61 @@
 .comentario {
-    background-color: #eee;
+    display: flex;
+    padding: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #555;
-    padding: 10px;
+    border-radius: .5rem;
+    background-color: #FFF;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+.comentario .avt {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.comentario .conteudo {
+    width: 100%;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.comentario .conteudo .nome {
+    color: #2D3748;
+    user-select: none;
+    font-size: 1.25rem;
+    margin: .5rem 0 .25rem 0;
+}
+
+.comentario .conteudo .email {
+    color: #6060D2;
+}
+
+.comentario .conteudo .mensagem {
+    color: #4A5568;
+    margin: .5rem 0;
+}
+
+.comentario .conteudo .data {
+    color: #999;
+    text-align: right;
+    font-size: .75rem;
+    user-select: none;
+}
+
+.comentario .conteudo button {
+    top: 0;
+    right: 0;
+    padding: 0;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #f16e6e;
+    cursor: pointer;
+}
+
+.comentario .conteudo button:hover {
+    background-color: #d56262;
+    font-weight: bold;
 }

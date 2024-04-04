@@ -1,3 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7FAFC;
+}
+
 .App {
-  padding: 20px;
+    padding: 20px;
+}
+
+.novo-comentario {
+    background-color: #FFF;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+.novo-comentario h2 {
+    margin: 0;
+
+}
+
+.novo-comentario input, textarea {
+    color: #4A5568;
+    background-color: #FFFFFF;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+    display: block;
+    border-radius: .5rem;
+}
+
+.novo-comentario input {
+    width: 300px;
+}
+
+.novo-comentario textarea {
+    width: 100%;
+    resize: none;
+    font-size: .90rem;
+}
+
+
+.novo-comentario button {
+    cursor: pointer;
+    background-color: #6060D2;
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    border: none;
+}
+
+.novo-comentario button:hover {
+    background-color: #4b4baf;
+    font-weight: bold;
 }
