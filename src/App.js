@@ -9,13 +9,13 @@ class App extends Component {
             {
                 nome: 'Jannet',
                 email: 'Jannet@email.com',
-                data: String(new Date()),
+                data: String(new Date(2024, 3, 2, 10, 30)),
                 texto: 'this is a default message'
             },
             {
                 nome: 'Hanna',
                 email: 'Hanna@email.com',
-                data: String(new Date()),
+                data: String(new Date(2024, 3, 2, 11, 35)),
                 texto: 'this is a default message too'
             },
         ],

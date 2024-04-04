@@ -1,4 +1,6 @@
 import React from "react";
+import {formatRelative} from 'date-fns'
+
 import './comentario.css'
 import usrImg from '../../assets/svg/user.svg'
 
@@ -10,7 +12,7 @@ const Comentario = props => {
                     <h2 class="nome">{props.name}</h2>
                     <p class="email">{props.email}</p>
                     <p class="mensagem">{props.children}</p>
-                    <p class="data">{props.date}</p>
+                    <p class="data">{formatRelative(props.date, new Date())}</p>
                     <button onClick={props.onRemove}>&times;</button>
                 </div>
             </div>
